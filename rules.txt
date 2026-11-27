@@ -10,3 +10,37 @@ kubectl create deployment name --image=
 kubectl scale deployment name --replicas=2
 kubectl expose deployment name --type=NodePort --port=80 --target-port=8080
 minikube service name
+
+
+
+MAVEN_JAVA
+maven-archetype-quickstart
+version >=1.4
+
+maven build goals clean install.
+
+MAVEN_WEB                              
+maven-archetype-webapp
+version >=1.4
+
+
+build-->
+git url
+invoke top level maven
+clean install
+post build action
+artifacts
+
+test-->
+git url
+build other projects
+
+deploy-->
+invoke top level maven
+copy artifacts
+deploy war/ear to container
+**/target/*.war
+contextPath
+credentials
+server.xml and tomcat-user.xml
+http://localhost:port/

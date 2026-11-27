@@ -1,0 +1,12 @@
+sudo apt update
+sudo apt upgrade
+sudo apt install docker.io
+sudo apt install docker-compose-v2 -y
+sudo docker build -t imgname .
+sudo docker run --name contname -p 8080:8080 -d imgname
+
+
+kubectl create deployment name --image=
+kubectl scale deployment name --replicas=2
+kubectl expose deployment name --type=NodePort --port=80 --target-port=8080
+minikube service name
